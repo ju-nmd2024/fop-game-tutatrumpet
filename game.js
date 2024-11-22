@@ -165,6 +165,7 @@ function ground() {
 
 //chatGPT
 function resetGame() {
+  frameRate(30);
   characterX = 200; // Initial horizontal position of the character
   characterY = 100; // Initial vertical position of the character
   velocityY = 1.5; // Initial velocity
