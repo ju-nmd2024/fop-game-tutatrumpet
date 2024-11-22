@@ -23,7 +23,7 @@ let gamesState = true;
 function setup() {
   createCanvas(700, 600);
   background(255);
-  frameRate(30);
+  frameRate(60);
 }
 
 //background
@@ -269,6 +269,7 @@ function resultScreen() {
 
 //the game
 function gameScreen() {
+  frameRate(30);
   gameBackground();
   clouds(300, 100);
   clouds(500, 200);
@@ -354,7 +355,7 @@ function mouseClicked() {
   } else if (state === "game") {
     state = "result";
   } else if (state === "result") {
-    state = "start";
     resetGame();
+    state = "start";
   }
 }
