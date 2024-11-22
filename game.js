@@ -23,6 +23,7 @@ let gamesState = true;
 function setup() {
   createCanvas(700, 600);
   background(255);
+  frameRate(30);
 }
 
 //background
@@ -336,14 +337,16 @@ function mouseClicked() {
     mouseX >= startX &&
     mouseX <= startX + rectWidth &&
     mouseY >= startY &&
-    mouseY <= startY + rectHeight
+    mouseY <= startY + rectHeight &&
+    state === "start"
   ) {
     state = "game";
   } else if (
     mouseX >= rectX &&
     mouseX <= rectX + rectWidth &&
     mouseY >= rectY &&
-    mouseY <= rectY + rectHeight
+    mouseY <= rectY + rectHeight &&
+    state === "start"
   ) {
     state = "instructions";
   } else if (state === "instructions") {
@@ -351,7 +354,7 @@ function mouseClicked() {
   } else if (state === "game") {
     state = "result";
   } else if (state === "result") {
-    resetGame();
     state = "start";
+    resetGame();
   }
 }
