@@ -353,8 +353,6 @@ function mouseClicked() {
     state = "instructions";
   } else if (state === "instructions") {
     state = "start";
-  } else if (state === "game") {
-    state = "result";
   } else if (state === "result") {
     resetGame();
     state = "start";
